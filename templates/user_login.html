@@ -1,0 +1,23 @@
+{% extends 'dummy.html' %}
+{% block title %}
+<title>user_login</title>
+{% endblock %}
+{% block body_block %}
+<center>
+    <h1>login</h1>
+
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <label for="un">username</label>
+        <input type="text" name="un" id="un"><br><br>
+
+        <label for="pw">password</label>
+        <input type="text" name="pw" id="pw"><br><br>
+
+        <input type="submit" value="login">
+    </form>
+    <a href="{% url 'forget_password' %}">Forgot_Password</a>
+</center>
+{% endblock %}
